@@ -1,0 +1,23 @@
+"""Task 7.1. Implement class-based context manager for opening and working with file,
+including handling exceptions. Do not use 'with open()'. Pass filename and mode via constructor."""
+
+
+class ContextManager:
+
+    def __init__(self, filename, mode='r') :
+        self.filename = filename
+        self.mode = mode
+
+    def __enter__(self) :
+
+        try:
+            self.myfile = open(self.filename , self.mode)
+            return self.myfile
+        except FileExistsError as a:
+            print(f'File doesn\'t exist. See the exception: {a} Please try again')
+        except FileNotFoundError as b:
+            print(f'File not found. See the exception: {b}')
+
+    def __exit__(self, FileExistsError) :
+         self.myfile.close()
+
