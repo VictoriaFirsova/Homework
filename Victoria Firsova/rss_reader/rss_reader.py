@@ -301,7 +301,14 @@ def all_above(result):
     limit = result['LIMIT']
     source = result['source']
     json = result['json']
-    if result['date'] and result['html']:
+    if result['date'] and result['html'] and result['pdf']:
+        date = result['date']
+        article_list = cashed_news(date, limit, source, json)
+        outpath = to_html(article_list)
+        print(f'(the completed HTML is stored at: {outpath})')
+        outpath = to_pdf(article_list)
+        print(f'(the completed PDF is stored at: {outpath})')
+    elif result['date'] and result['html']:
         date = result['date']
         article_list = cashed_news(date, limit, source, json)
         outpath = to_html(article_list)
