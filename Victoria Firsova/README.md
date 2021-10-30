@@ -6,6 +6,7 @@ I am proposed to implement Python RSS-reader using python 3.9.
 RSS reader is a command-line utility which receives RSS URL and prints results in human-readable format.
 Format of the news console output:
 $ rss_reader.py https://rssexport.rbc.ru/rbcnews/news/30/full.rss --limit 1
+
 1.
 title: Гузеева сообщила, что находится в больнице в Коммунарке три недели
 
@@ -36,8 +37,18 @@ optional arguments:
   --html         Conversion to html
   --json         Print result as JSON in stdout
   --version      show program's version number and exit
+ 
+JSON option prints news to stdout. Example:
+ {
+        "title": "G20 спустится с «Облака» на землю // Как и о чем будут разговаривать на саммите лидеры «двадцатки»",
+        "link": "https://www.kommersant.ru/doc/5060238",
+        "short_source": "https://www.kommersant.ru",
+        "published": "2021-10-30",
+        "description": "В Риме сегодня стартует саммит G20, в ходе которого будет обсуждаться широкий круг тем: от энергетики и экологии до пандемии и ситуации в Афганистане. «Двадцатка» вернется к очному формату, хотя не все решили им воспользоваться: лидеры России и Китая Владимир Путин и Си Цзиньпин выступят по видеосвязи, в то время как в Риме будут находиться главы МИДов. На этом фоне в американском Белом доме предрекли, что «в центре внимания» на саммите окажутся США и Европа. У президента Джо Байдена в Риме обширная повестка и важная цель — минимизировать ущерб, нанесенный в последние месяцы отношениям Вашингтона с европейскими партнерами.",
+        "category": "Мир"
+    },
 
-installing the package (if Python is installed, check the version python>=3.9, <3.10)
+Installing the package (if Python is installed, check the version python>=3.9, <3.10)
 1. create a folder, put .tar-file to your folder
 2. create a virtual environment 
    1. download virtualenv for win 'pip install virtualenv' and for Ubuntu 'sudo apt-get install python3-venv'
